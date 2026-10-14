@@ -1,0 +1,541 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Comprehensive Preventive Care',
+    description: 'Thorough examinations, digital low-radiation X-rays, gentle ultrasonic cleanings, and proactive oral cancer screenings.',
+    icon: 'shield',
+    badge: 'Routine Care'
+  },
+  {
+    title: 'Aesthetic & Cosmetic Dentistry',
+    description: 'Professional in-office whitening, handcrafted porcelain veneers, and cosmetic bonding to craft your ideal confident smile.',
+    icon: 'sparkles',
+    badge: 'Popular'
+  },
+  {
+    title: 'Precision Dental Implants',
+    description: 'Permanent, natural-feeling tooth replacements planned with 3D CBCT guided imaging for maximum comfort and longevity.',
+    icon: 'tooth',
+    badge: 'Restorative'
+  },
+  {
+    title: 'Clear Aligners & Orthodontics',
+    description: 'Straighten your teeth discreetly with custom clear aligners. No metal brackets, removable for dining and oral hygiene.',
+    icon: 'smile',
+    badge: 'Orthodontics'
+  },
+  {
+    title: 'Periodontal & Gum Wellness',
+    description: 'Advanced laser therapy and gentle deep cleanings to treat gingivitis and safeguard your systemic health.',
+    icon: 'heart',
+    badge: 'Gum Health'
+  },
+  {
+    title: 'Same-Day Emergency Relief',
+    description: 'Fast, compassionate triage for toothaches, chipped teeth, lost crowns, or sports injuries. Reserved daily slots.',
+    icon: 'bell',
+    badge: 'Priority Access'
+  }
+];
+
+const highlights = [
+  { number: '15+', label: 'Years Serving Community' },
+  { number: '99.4%', label: 'Patient Satisfaction' },
+  { number: '10,000+', label: 'Smiles Transformed' },
+  { number: '100%', label: 'Digital & Painless Focus' }
+];
+
+const testimonials = [
+  {
+    quote: "I've had severe dental anxiety since childhood. Dr. Vance and the team completely changed that. Gentle, patient, and modern!",
+    name: 'Sarah Mitchell',
+    role: 'Patient since 2021',
+    rating: 5
+  },
+  {
+    quote: "Got my Invisalign and custom veneers here. The 3D scan took two minutes and the final results exceeded all my expectations.",
+    name: 'David Chen',
+    role: 'Patient since 2023',
+    rating: 5
+  },
+  {
+    quote: "Called at 9 AM with a broken tooth and was seated by 11 AM. Exceptional emergency dental care when I needed it most.",
+    name: 'Elena Rostova',
+    role: 'Patient since 2024',
+    rating: 5
+  }
+];
+---
+
+<BaseLayout
+  title="Apex Dental Studio | Compassionate, Modern Dental Care"
+  description="Experience elevated dentistry at Apex Dental Studio. Gentle cleanings, cosmetic smile makeovers, dental implants, and same-day emergency appointments."
+>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-sky-50/70 via-white to-slate-50 py-20 lg:py-28" aria-labelledby="hero-heading">
+    <!-- Decorative background glow -->
+    <div class="absolute -top-32 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-200/50 blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute top-1/2 -right-32 -z-10 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+        <!-- Hero Text -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 rounded-full bg-cyan-100/80 px-3.5 py-1 text-xs font-semibold text-cyan-800 border border-cyan-200/60 mb-6">
+            <span class="inline-block h-2 w-2 rounded-full bg-cyan-600"></span>
+            Elevated Patient Experience &amp; Modern Technology
+          </div>
+          
+          <h1 id="hero-heading" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+            Modern dental care designed around <span class="bg-gradient-to-r from-cyan-600 to-sky-600 bg-clip-text text-transparent">your comfort</span>.
+          </h1>
+
+          <p class="mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl">
+            From routine prevention to complete smile makeovers, experience gentle, pain-free dentistry with 3D digital imaging, zero wait times, and transparent pricing.
+          </p>
+
+          <!-- CTAs -->
+          <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a
+              href="#appointment"
+              class="inline-flex items-center justify-center rounded-xl bg-cyan-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-cyan-600/25 hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 transition-all active:scale-[0.99]"
+              id="hero-book-btn"
+            >
+              Request an Appointment
+              <svg class="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="tel:5553214321"
+              class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-slate-700 border border-slate-200 shadow-xs hover:bg-slate-50 hover:text-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 transition-all"
+              id="hero-call-btn"
+            >
+              <svg class="mr-2 h-4 w-4 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              (555) 321-4321
+            </a>
+          </div>
+
+          <!-- Trust points -->
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-slate-200/80 pt-8 text-xs font-medium text-slate-600">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Most Insurances Accepted</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Same-Day Emergency Care</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-emerald-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Relaxation &amp; Sedation Options</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card Feature -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md rounded-3xl bg-white p-8 shadow-xl shadow-slate-200/60 border border-slate-100">
+            <!-- Top badge -->
+            <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600">
+                  <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2C8 2 6 4 6 8c0 3.5 1.5 6 2 9 .4 2.5 1.5 4 4 4s3.6-1.5 4-4c.5-3 2-5.5 2-9 0-4-2-6-6-6Z" />
+                    <path d="M9 10c1.5 1 4.5 1 6 0" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-sm font-bold text-slate-900">Dr. Elena Vance, DDS</h2>
+                  <p class="text-xs text-slate-500">Lead Clinician &amp; Prosthodontist</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center rounded-md bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700 border border-emerald-200/50">
+                ★ 5.0 Rating
+              </span>
+            </div>
+
+            <!-- Quick Service Highlights inside card -->
+            <div class="py-6 space-y-4">
+              <div class="rounded-xl bg-slate-50 p-4 border border-slate-100/80">
+                <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Featured Technology</h3>
+                <p class="text-sm font-medium text-slate-800 mt-1">3D Cone Beam CT Scanning</p>
+                <p class="text-xs text-slate-500 mt-0.5">Ultra-precise anatomical mapping with 80% less radiation.</p>
+              </div>
+
+              <div class="rounded-xl bg-slate-50 p-4 border border-slate-100/80">
+                <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wide">New Patient Special</h3>
+                <p class="text-sm font-medium text-slate-800 mt-1">$149 Comprehensive Exam &amp; X-Rays</p>
+                <p class="text-xs text-slate-500 mt-0.5">Includes full periodontal evaluation &amp; treatment roadmap.</p>
+              </div>
+            </div>
+
+            <!-- Emergency box -->
+            <div class="rounded-2xl bg-gradient-to-r from-cyan-600 to-sky-700 p-5 text-white">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-medium text-cyan-100">Experiencing a dental emergency?</p>
+                  <p class="text-base font-bold text-white mt-0.5">Call our on-call dentist</p>
+                </div>
+                <a
+                  href="tel:5553214321"
+                  class="rounded-xl bg-white px-3.5 py-2 text-xs font-bold text-cyan-700 hover:bg-cyan-50 transition-colors shadow-xs"
+                >
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Banner -->
+  <section class="bg-slate-900 py-12 text-white border-y border-slate-800" aria-label="Practice Highlights">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
+        {highlights.map((item) => (
+          <div class="flex flex-col">
+            <span class="text-3xl sm:text-4xl font-extrabold text-cyan-400 tracking-tight">{item.number}</span>
+            <span class="mt-1 text-sm font-medium text-slate-400">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 lg:py-28 bg-white" aria-labelledby="services-heading">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 id="services-heading" class="text-xs font-bold uppercase tracking-widest text-cyan-600">Our Clinical Specialties</h2>
+        <p class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          Everything your smile needs under one modern roof
+        </p>
+        <p class="mt-4 text-base text-slate-600">
+          We combine artistic precision, evidence-based dentistry, and painless techniques for patients of every age.
+        </p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, index) => (
+          <article class="group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-7 shadow-xs hover:border-cyan-300 hover:shadow-lg hover:shadow-cyan-500/5 transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-200">
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 2C8 2 6 4 6 8c0 3.5 1.5 6 2 9 .4 2.5 1.5 4 4 4s3.6-1.5 4-4c.5-3 2-5.5 2-9 0-4-2-6-6-6Z" />
+                    <path d="M9 10c1.5 1 4.5 1 6 0" />
+                  </svg>
+                </span>
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
+                  {service.badge}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-cyan-600 transition-colors">
+                {service.title}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                {service.description}
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-cyan-600 group-hover:text-cyan-700">
+              <a href="#appointment" class="flex items-center gap-1 focus:outline-none focus-visible:underline" aria-label={`Schedule ${service.title}`}>
+                <span>Inquire about this treatment</span>
+                <span aria-hidden="true" class="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Comfort Philosophy Section -->
+  <section id="about" class="py-20 bg-slate-50 border-t border-slate-200/80" aria-labelledby="about-heading">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-cyan-600">The Apex Difference</span>
+          <h2 id="about-heading" class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+            Dentistry reimagined: Gentle, transparent, and completely anxiety-free.
+          </h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            We understand dental visits have historically caused stress. That is why Apex Dental Studio was engineered from the ground up to redefine your clinic experience.
+          </p>
+
+          <div class="mt-8 space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 font-bold text-sm">
+                ✓
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-slate-900">Zero Wait Policy</h3>
+                <p class="text-sm text-slate-600">Your time is respected. We schedule realistic appointments so you are seated within minutes of arrival.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 font-bold text-sm">
+                ✓
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-slate-900">Comfort Amenities</h3>
+                <p class="text-sm text-slate-600">Noise-canceling headphones, ceiling screens with streaming entertainment, memory foam treatment chairs, and warm facial towels.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 font-bold text-sm">
+                ✓
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-slate-900">No Hidden Costs</h3>
+                <p class="text-sm text-slate-600">You receive a clear treatment estimate outlining all insurance contributions and out-of-pocket costs before any procedure starts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-white p-8 shadow-sm border border-slate-200">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Patient Safety &amp; Sterilization Standards</h3>
+          <p class="text-sm text-slate-600 mb-6">
+            We adhere to hospital-grade sterilization protocols exceeding CDC and OSHA dental guidelines.
+          </p>
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-center gap-3">
+              <span class="h-2 w-2 rounded-full bg-cyan-600"></span>
+              Medical-grade HEPA 14 air filtration in each treatment operatory
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="h-2 w-2 rounded-full bg-cyan-600"></span>
+              Autoclaved multi-stage instrument sterilization with biological spore verification
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="h-2 w-2 rounded-full bg-cyan-600"></span>
+              Biocompatible, BPA-free restorative composites and mercury-free practice
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="h-2 w-2 rounded-full bg-cyan-600"></span>
+              Digital intraoral cameras allowing you to see what the doctor sees in real time
+            </li>
+          </ul>
+
+          <div class="mt-8 rounded-xl bg-cyan-50 p-4 border border-cyan-100">
+            <p class="text-xs font-semibold text-cyan-900">Insurance &amp; Payment Options</p>
+            <p class="text-xs text-cyan-700 mt-1">
+              In-network with Delta Dental, Cigna, MetLife, Aetna, Guardian, and UnitedHealthcare. Flexible 0% interest monthly financing available via CareCredit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section id="technology" class="py-20 bg-white" aria-labelledby="tech-heading">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-600">Advanced Digital Dentistry</span>
+        <h2 id="tech-heading" class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">
+          Precision instrumentation for faster, gentler treatments
+        </h2>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50/50">
+          <div class="h-10 w-10 rounded-lg bg-cyan-600 text-white flex items-center justify-center font-bold text-lg mb-4">
+            3D
+          </div>
+          <h3 class="text-base font-bold text-slate-900">iTero Intraoral 3D Scanners</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            No more goopy impression trays. Digital optical wand captures micron-accurate digital impressions in under 3 minutes for crowns and aligners.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50/50">
+          <div class="h-10 w-10 rounded-lg bg-cyan-600 text-white flex items-center justify-center font-bold text-lg mb-4">
+            AI
+          </div>
+          <h3 class="text-base font-bold text-slate-900">AI-Assisted Diagnostic Radiography</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Computer-assisted analysis identifies micro-cavities and bone density changes months before they become visible to the naked eye.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50/50">
+          <div class="h-10 w-10 rounded-lg bg-cyan-600 text-white flex items-center justify-center font-bold text-lg mb-4">
+            LS
+          </div>
+          <h3 class="text-base font-bold text-slate-900">Waterlase Dental Laser Therapy</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Minimally invasive soft-tissue contouring and cavity prep often without requiring local anesthesia needles or sutures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-slate-900 text-white" aria-labelledby="testimonials-heading">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Verified Patient Experiences</span>
+        <h2 id="testimonials-heading" class="mt-2 text-3xl sm:text-4xl font-extrabold">
+          Loved by hundreds of smiling patients
+        </h2>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+        {testimonials.map((t) => (
+          <div class="rounded-2xl bg-slate-800/80 p-7 border border-slate-700/80 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-amber-400 mb-4" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <blockquote class="text-sm leading-relaxed text-slate-300 italic">
+                "{t.quote}"
+              </blockquote>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-700">
+              <p class="text-sm font-bold text-white">{t.name}</p>
+              <p class="text-xs text-slate-400">{t.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment / Contact Form Section (Zero-JS semantic HTML) -->
+  <section id="appointment" class="py-20 bg-slate-50" aria-labelledby="form-heading">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-white p-8 sm:p-12 shadow-xl border border-slate-200">
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-widest text-cyan-600">Convenient Scheduling</span>
+          <h2 id="form-heading" class="mt-2 text-3xl font-extrabold text-slate-900">
+            Request your visit at Apex Dental
+          </h2>
+          <p class="mt-2 text-sm text-slate-600">
+            Fill out your preferences below. Our scheduling coordinator will confirm your appointment time by phone or email within 2 business hours.
+          </p>
+        </div>
+
+        <!-- Semantic Zero-JS form submission or mailto fallback -->
+        <form action="mailto:care@apexdentalstudio.example" method="post" enctype="text/plain" class="space-y-6">
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div>
+              <label for="first-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">First Name *</label>
+              <input
+                type="text"
+                id="first-name"
+                name="first_name"
+                required
+                placeholder="Jane"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+              />
+            </div>
+            <div>
+              <label for="last-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Last Name *</label>
+              <input
+                type="text"
+                id="last-name"
+                name="last_name"
+                required
+                placeholder="Doe"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div>
+              <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="jane.doe@example.com"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="(555) 000-0000"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div>
+              <label for="service-type" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Reason for Visit</label>
+              <select
+                id="service-type"
+                name="service_type"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all bg-white"
+              >
+                <option value="routine-checkup">Routine Cleaning &amp; Exam</option>
+                <option value="cosmetic">Teeth Whitening or Cosmetic Consultation</option>
+                <option value="invisalign">Clear Aligners (Invisalign)</option>
+                <option value="implants">Dental Implants / Tooth Replacement</option>
+                <option value="emergency">Emergency / Tooth Pain</option>
+                <option value="second-opinion">Second Opinion</option>
+              </select>
+            </div>
+            <div>
+              <label for="preferred-time" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Preferred Time of Day</label>
+              <select
+                id="preferred-time"
+                name="preferred_time"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all bg-white"
+              >
+                <option value="morning">Morning (8:00 AM – 12:00 PM)</option>
+                <option value="afternoon">Afternoon (12:00 PM – 4:00 PM)</option>
+                <option value="late">Late Afternoon (4:00 PM – 6:00 PM)</option>
+                <option value="saturday">Saturday Morning</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="patient-notes" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Additional Notes or Symptoms (Optional)</label>
+            <textarea
+              id="patient-notes"
+              name="notes"
+              rows="3"
+              placeholder="Tell us about any specific concerns, anxiety, or previous dental experiences..."
+              class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all"
+            ></textarea>
+          </div>
+
+          <div class="flex items-center justify-between pt-4">
+            <p class="text-xs text-slate-500">
+              🔒 Your health information is protected and confidential.
+            </p>
+            <button
+              type="submit"
+              id="submit-appointment-btn"
+              class="inline-flex items-center justify-center rounded-xl bg-cyan-600 px-7 py-3.5 text-sm font-semibold text-white shadow-md hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600 transition-all active:scale-[0.98]"
+            >
+              Submit Request
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
