@@ -1,5 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Professional Dental Photography Assets
+import heroImage from '../assets/images/hero-consultation.jpg';
+import clinicImage from '../assets/images/clinic-interior.jpg';
+import techImage from '../assets/images/dental-technology.jpg';
+import smileImage from '../assets/images/smile-results.jpg';
 
 // Clinical Specialties Data (UK Private Dental Practice)
 const specialties = [
@@ -70,13 +77,13 @@ const technologies = [
   {
     title: 'iTero® 5D Plus Intraoral 3D Scanners',
     subtitle: 'Zero Putty, Micron Precision',
-    description: 'Goodbye to messy, uncomfortable silicone impression trays. Our optical wand takes 6,000 optical frames per second to render an accurate 3D model of your teeth in under 3 minutes.',
+    description: 'Goodbye to messy silicone impression trays. Our optical wand takes 6,000 optical frames per second to render an accurate 3D model of your teeth in under 3 minutes.',
     badge: 'Digital Scanning'
   },
   {
     title: 'Ultra-Low Dose 3D CBCT Radiography',
     subtitle: '80% Lower Radiation',
-    description: 'High-definition 3D volumetric bone and nerve scans provide our surgeons with sub-millimeter anatomical accuracy while exposing you to significantly less radiation than hospital scans.',
+    description: 'High-definition 3D volumetric bone and nerve scans provide our surgeons with sub-millimeter anatomical accuracy while exposing you to significantly less radiation.',
     badge: '3D Diagnostics'
   },
   {
@@ -88,7 +95,7 @@ const technologies = [
   {
     title: 'AI-Assisted Dental Radiographic Analysis',
     subtitle: 'Microscopic Cavity Detection',
-    description: 'Second Opinion® artificial intelligence reviews your dental radiographs alongside our dentists to pinpoint microscopic enamel demineralization before it develops into deep decay.',
+    description: 'Second Opinion® artificial intelligence reviews your dental radiographs alongside our dentists to pinpoint microscopic enamel demineralization early.',
     badge: 'Predictive Care'
   }
 ];
@@ -131,8 +138,8 @@ const reviews = [
   title="Private Dentist in Harley Street, London"
   description="Apex Dental Studio is a leading private dental practice on Harley Street, London. Modern, gentle dental care: hygiene cleanings, composite bonding, Invisalign, and dental implants."
 >
-  <!-- Hero Section -->
-  <section class="relative overflow-hidden bg-gradient-to-b from-cyan-50/60 via-white to-slate-50 py-16 sm:py-24 lg:py-28" aria-labelledby="hero-title">
+  <!-- Hero Section with High-Performance Photography -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-cyan-50/70 via-white to-slate-50 py-16 sm:py-24 lg:py-28" aria-labelledby="hero-title">
     <!-- Ambient Backdrop Illumination -->
     <div class="absolute -top-40 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-200/40 blur-3xl pointer-events-none" aria-hidden="true"></div>
     <div class="absolute top-1/3 -right-24 -z-10 h-[400px] w-[400px] rounded-full bg-sky-200/30 blur-3xl pointer-events-none" aria-hidden="true"></div>
@@ -197,53 +204,41 @@ const reviews = [
           </div>
         </div>
 
-        <!-- Hero Card Showcase -->
+        <!-- Hero Visual: Real Dental Photography with Overlay Badges -->
         <div class="lg:col-span-5">
-          <div class="relative mx-auto max-w-md rounded-3xl bg-white p-7 sm:p-8 shadow-xl shadow-slate-200/70 border border-slate-200/90">
-            <!-- Doctor Header -->
-            <div class="flex items-center justify-between pb-6 border-b border-slate-100">
-              <div class="flex items-center gap-3.5">
-                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-100/80 text-cyan-700 font-black text-lg">
-                  AD
-                </div>
-                <div>
-                  <h2 class="text-base font-bold text-slate-900">Dr. Elena Vance, BDS (Hons)</h2>
-                  <p class="text-xs text-slate-500">Lead Clinician • GDC Reg: 198421</p>
-                </div>
-              </div>
-              <span class="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-700 border border-emerald-200/60">
-                ★ 4.9 Rating
-              </span>
-            </div>
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Decorative Backing Glow -->
+            <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-cyan-600 to-sky-600 opacity-20 blur-xl"></div>
 
-            <!-- Key Features Showcase -->
-            <div class="py-6 space-y-3.5">
-              <div class="rounded-2xl bg-slate-50 p-4 border border-slate-100">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-700 block">New Patient Consultation</span>
-                <p class="text-sm font-bold text-slate-900 mt-1">Full 14-Point Health Examination &amp; X-Rays</p>
-                <p class="text-xs text-slate-600 mt-0.5">Includes full periodontal screening, oral cancer check, and bespoke treatment plan.</p>
-              </div>
+            <div class="relative overflow-hidden rounded-3xl bg-white p-3 shadow-2xl border border-slate-200/80">
+              <Image
+                src={heroImage}
+                alt="Modern private dental surgery treatment suite and friendly consultation on Harley Street London"
+                class="w-full h-80 sm:h-96 object-cover rounded-2xl"
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                format="webp"
+                quality={85}
+                loading="eager"
+              />
 
-              <div class="rounded-2xl bg-slate-50 p-4 border border-slate-100">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan-700 block">Modern Comfort</span>
-                <p class="text-sm font-bold text-slate-900 mt-1">Noise-Canceling Audio &amp; Ceiling Screens</p>
-                <p class="text-xs text-slate-600 mt-0.5">Watch your favorite show or listen to music in an ultra-quiet surgical suite.</p>
-              </div>
-            </div>
-
-            <!-- Urgent Callout Box -->
-            <div class="rounded-2xl bg-gradient-to-r from-slate-900 to-cyan-950 p-5 text-white">
-              <div class="flex items-center justify-between">
-                <div>
-                  <p class="text-xs font-semibold text-cyan-300">Dental Emergency Today?</p>
-                  <p class="text-sm font-bold text-white mt-0.5">Slots reserved for urgent toothache</p>
+              <!-- Floating Doctor Credential Badge -->
+              <div class="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/95 backdrop-blur-md p-4 shadow-xl border border-slate-100 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-600 text-white font-black text-sm shadow-md">
+                    AD
+                  </div>
+                  <div>
+                    <h2 class="text-sm font-bold text-slate-900 leading-tight">Dr. Elena Vance, BDS</h2>
+                    <p class="text-[11px] text-slate-500">Lead Clinician • GDC Reg: 198421</p>
+                  </div>
                 </div>
-                <a
-                  href="tel:02079460912"
-                  class="rounded-xl bg-cyan-500 px-3.5 py-2 text-xs font-bold text-white hover:bg-cyan-400 transition-colors shadow-xs"
-                >
-                  Call Clinic
-                </a>
+                <div class="text-right">
+                  <span class="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-bold text-emerald-700 border border-emerald-200/60">
+                    ★ 4.9
+                  </span>
+                  <span class="block text-[10px] text-slate-400 mt-0.5">500+ Reviews</span>
+                </div>
               </div>
             </div>
           </div>
@@ -338,47 +333,68 @@ const reviews = [
     </div>
   </section>
 
-  <!-- Modern Diagnostic Technology Section -->
+  <!-- Modern Diagnostic Technology Section (with Tech Photography) -->
   <section id="technology" class="py-20 lg:py-24 bg-slate-50 border-t border-slate-200/90" aria-labelledby="technology-heading">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl mx-auto text-center">
-        <span class="text-xs font-bold uppercase tracking-widest text-cyan-600">Precision Diagnostics</span>
-        <h2 id="technology-heading" class="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-          Modern technology that makes appointments faster and gentler
-        </h2>
-        <p class="mt-3 text-base text-slate-600">
-          We invest in advanced optical and radiographic tools to eliminate discomfort, increase diagnostic accuracy, and reduce appointment duration.
-        </p>
-      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Tech Description & Feature Grid -->
+        <div class="lg:col-span-7">
+          <span class="text-xs font-bold uppercase tracking-widest text-cyan-600">Precision Diagnostics</span>
+          <h2 id="technology-heading" class="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
+            Modern technology that makes appointments faster and gentler
+          </h2>
+          <p class="mt-3 text-base text-slate-600 leading-relaxed">
+            We invest in advanced optical and radiographic tools to eliminate discomfort, increase diagnostic accuracy, and reduce chair time.
+          </p>
 
-      <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
-        {technologies.map((tech) => (
-          <div class="rounded-3xl bg-white p-8 border border-slate-200/90 shadow-sm flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="inline-flex items-center rounded-lg bg-cyan-50 px-3 py-1 text-xs font-bold text-cyan-800 border border-cyan-100">
-                  {tech.badge}
-                </span>
-                <span class="text-xs font-semibold text-slate-400">{tech.subtitle}</span>
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {technologies.map((tech) => (
+              <div class="rounded-2xl bg-white p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="inline-flex items-center rounded-lg bg-cyan-50 px-2.5 py-0.5 text-xs font-bold text-cyan-800 border border-cyan-100">
+                      {tech.badge}
+                    </span>
+                    <span class="text-[11px] font-semibold text-slate-400">{tech.subtitle}</span>
+                  </div>
+                  <h3 class="text-base font-bold text-slate-900">{tech.title}</h3>
+                  <p class="mt-2 text-xs leading-relaxed text-slate-600">{tech.description}</p>
+                </div>
               </div>
-              <h3 class="text-xl font-bold text-slate-900">{tech.title}</h3>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">{tech.description}</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-emerald-600 font-semibold">
-              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-              Clinical standard across all Harley Street operatories
+            ))}
+          </div>
+        </div>
+
+        <!-- Tech Photography Card -->
+        <div class="lg:col-span-5">
+          <div class="overflow-hidden rounded-3xl bg-white p-3 shadow-xl border border-slate-200/90">
+            <Image
+              src={techImage}
+              alt="Advanced digital dental diagnostics, 3D CBCT imaging, and modern operatory equipment"
+              class="w-full h-80 sm:h-96 object-cover rounded-2xl"
+              widths={[400, 800]}
+              sizes="(max-width: 768px) 100vw, 40vw"
+              format="webp"
+              quality={85}
+              loading="lazy"
+            />
+            <div class="p-4 text-center">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/60">
+                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                Ultra-Low Radiation &amp; 3D Digital Impressions
+              </span>
             </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About / Nervous Patient Care Section -->
+  <!-- About / Nervous Patient Care Section (with Clinic Interior Photography) -->
   <section id="about" class="py-20 bg-white" aria-labelledby="about-practice-heading">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-        <div class="lg:col-span-7">
+        <div class="lg:col-span-6">
           <span class="text-xs font-bold uppercase tracking-widest text-cyan-600">Patient-Centered Dentistry</span>
           <h2 id="about-practice-heading" class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">
             A calm, unhurried approach for anxious patients
@@ -420,42 +436,22 @@ const reviews = [
           </div>
         </div>
 
-        <div class="lg:col-span-5">
-          <div class="rounded-3xl bg-gradient-to-br from-slate-900 via-cyan-950 to-slate-900 p-8 text-white shadow-xl">
-            <h3 class="text-xl font-bold mb-4">Harley Street Clinic Accreditations</h3>
-            <ul class="space-y-4 text-xs text-slate-300">
-              <li class="flex items-start gap-3">
-                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 font-bold">✓</span>
-                <div>
-                  <strong class="text-white block">Care Quality Commission (CQC)</strong>
-                  Regularly inspected and verified compliant with all fundamental standards.
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 font-bold">✓</span>
-                <div>
-                  <strong class="text-white block">General Dental Council (GDC)</strong>
-                  All dental practitioners hold active UK GDC registration and medical indemnity.
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 font-bold">✓</span>
-                <div>
-                  <strong class="text-white block">British Academy of Cosmetic Dentistry (BACD)</strong>
-                  Committed to clinical excellence in aesthetic smile restorations.
-                </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 font-bold">✓</span>
-                <div>
-                  <strong class="text-white block">Invisalign® Diamond Apex Provider</strong>
-                  Ranked in the top 1% of Invisalign providers across Europe and the UK.
-                </div>
-              </li>
-            </ul>
-
-            <div class="mt-8 pt-6 border-t border-slate-800 text-xs text-cyan-200">
-              📍 5-minute walk from Oxford Circus &amp; Regent's Park Underground Stations.
+        <!-- Clinic Interior Photography -->
+        <div class="lg:col-span-6">
+          <div class="overflow-hidden rounded-3xl bg-slate-100 p-3 shadow-xl border border-slate-200">
+            <Image
+              src={clinicImage}
+              alt="Bright, modern, relaxing private dental practice operatory interior on Harley Street London"
+              class="w-full h-80 sm:h-96 object-cover rounded-2xl"
+              widths={[400, 800]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              format="webp"
+              quality={85}
+              loading="lazy"
+            />
+            <div class="mt-4 p-4 rounded-2xl bg-white border border-slate-200/80">
+              <p class="text-xs font-bold text-slate-900">42 Harley Street Treatment Suites</p>
+              <p class="text-xs text-slate-500 mt-0.5">Architecturally designed for acoustical serenity, natural light, and hospital-grade HEPA 14 air purity.</p>
             </div>
           </div>
         </div>
@@ -463,20 +459,43 @@ const reviews = [
     </div>
   </section>
 
-  <!-- Patient Testimonials Section -->
+  <!-- Patient Testimonials & Smile Results Section (with Smile Photography) -->
   <section id="testimonials" class="py-20 bg-slate-900 text-white" aria-labelledby="reviews-heading">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto">
-        <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Verified Patient Feedback</span>
-        <h2 id="reviews-heading" class="mt-2 text-3xl font-extrabold sm:text-4xl">
-          Real stories from patients across London
-        </h2>
-        <p class="mt-3 text-sm text-slate-400">
-          Consistently rated 5 stars for clinical outcomes, empathetic care, and transparent pricing.
-        </p>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        <div class="lg:col-span-7">
+          <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Verified Patient Feedback</span>
+          <h2 id="reviews-heading" class="mt-2 text-3xl font-extrabold sm:text-4xl">
+            Real stories and natural smile transformations
+          </h2>
+          <p class="mt-3 text-base text-slate-400">
+            Consistently rated 5 stars for gentle technique, artistic precision, and transparent pricing.
+          </p>
+        </div>
+        
+        <!-- Smile Results Photography Showcase -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative overflow-hidden rounded-3xl bg-slate-800 p-2.5 border border-slate-700/80 shadow-2xl max-w-sm">
+            <Image
+              src={smileImage}
+              alt="Happy smiling patient with healthy confident teeth after cosmetic bonding and teeth whitening"
+              class="w-full h-56 object-cover rounded-2xl"
+              widths={[400, 600]}
+              sizes="(max-width: 768px) 100vw, 30vw"
+              format="webp"
+              quality={85}
+              loading="lazy"
+            />
+            <div class="p-3 text-center">
+              <span class="text-xs font-bold text-cyan-300">Natural Aesthetic Results</span>
+              <p class="text-[11px] text-slate-400 mt-0.5">Bespoke cosmetic bonding &amp; Invisalign orthodontic alignment</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Reviews Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {reviews.map((rev) => (
           <div class="rounded-3xl bg-slate-800/90 p-8 border border-slate-700/80 flex flex-col justify-between">
             <div>
@@ -554,7 +573,7 @@ const reviews = [
           </div>
         </div>
 
-        <!-- Semantic Zero-JS Appointment Form (Targets Azure Function endpoint or mailto) -->
+        <!-- Semantic Zero-JS Appointment Form -->
         <div class="lg:col-span-7">
           <div class="rounded-3xl bg-white p-8 sm:p-10 shadow-xl border border-slate-200/90">
             <h3 class="text-xl font-bold text-slate-900">Request an Appointment</h3>
